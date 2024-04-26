@@ -1,10 +1,9 @@
-package utill;
+package com.koreait.exam.acc_app_2024_04.util;
 
-import app.AppConfig;
-import app.base.dto.RsData;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
+import com.koreait.exam.acc_app_2024_04.app.AppConfig;
+import com.koreait.exam.acc_app_2024_04.app.base.dto.RsData;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -129,3 +128,4 @@ public class Ut {
         }
     }
 }
+

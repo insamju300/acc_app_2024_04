@@ -25,9 +25,9 @@ spring:
 logging:
   level:
     root: info
-    app: debug
+    com.koreait.exam.acc_app_2024_04.app: debug
     org.hibernate.type.descriptor.sql: trace
 custom:
   site:
-    name: ??
+    name: MUT
     baseUrl: "http://localhost:8010"

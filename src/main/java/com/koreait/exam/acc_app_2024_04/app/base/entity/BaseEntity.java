@@ -1,4 +1,4 @@
-package app.base.entity;
+package com.koreait.exam.acc_app_2024_04.app.base.entity;
 
 import lombok.Builder;
 import lombok.Getter;

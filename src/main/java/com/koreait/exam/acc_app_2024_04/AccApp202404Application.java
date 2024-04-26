@@ -1,4 +1,4 @@
-package com.example.acc_app_2024_04;
+package com.koreait.exam.acc_app_2024_04;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

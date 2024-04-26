@@ -1,4 +1,4 @@
-package app;
+package com.koreait.exam.acc_app_2024_04.app;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

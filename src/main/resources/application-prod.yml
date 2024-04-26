@@ -14,7 +14,7 @@ spring:
 logging:
   level:
     root: info
-    app: info
+    com.koreait.exam.final__acc_app_2024_04.app: info
     org.hibernate.type.descriptor.sql: info
 custom:
   site:
