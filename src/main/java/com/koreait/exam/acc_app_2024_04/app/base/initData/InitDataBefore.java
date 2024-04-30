@@ -16,11 +16,11 @@ import java.util.List;
 
 public interface InitDataBefore {
     default void before(
-        MemberService memberService,
-        SongService songService,
-        ProductService productService,
-        CartService cartService,
-        OrderService orderService) {
+            MemberService memberService,
+            SongService songService,
+            ProductService productService,
+            CartService cartService,
+            OrderService orderService) {
 
         class Helper {
             public Order order(Member member, List<Product> products) {

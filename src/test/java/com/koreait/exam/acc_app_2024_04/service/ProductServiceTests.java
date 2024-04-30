@@ -1,5 +1,7 @@
 package com.koreait.exam.acc_app_2024_04.service;
 
+import com.koreait.exam.acc_app_2024_04.app.member.entity.Member;
+import com.koreait.exam.acc_app_2024_04.app.member.repository.MemberRepository;
 import com.koreait.exam.acc_app_2024_04.app.product.entity.Product;
 import com.koreait.exam.acc_app_2024_04.app.product.service.ProductService;
 import com.koreait.exam.acc_app_2024_04.app.song.entity.Song;

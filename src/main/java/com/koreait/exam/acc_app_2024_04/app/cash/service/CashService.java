@@ -16,19 +16,19 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @Transactional
 public class CashService {
-  private final CashRepository cashRepository;
+    private final CashRepository cashRepository;
 
-  public CashLog addCash(Member member, long price, String eventType){
-    CashLog cashLog = CashLog.builder()
-        .member(member)
-        .price(price)
-        .eventType(eventType)
-        .build();
+    public CashLog addCash(Member member, long price, String eventType){
+        CashLog cashLog = CashLog.builder()
+                .member(member)
+                .price(price)
+                .eventType(eventType)
+                .build();
 
-    cashRepository.save(cashLog);
+        cashRepository.save(cashLog);
 
-    return cashLog;
-  }
+        return cashLog;
+    }
 
 
 }

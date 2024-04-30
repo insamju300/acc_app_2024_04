@@ -21,8 +21,8 @@ import static javax.persistence.FetchType.LAZY;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class CartItem extends BaseEntity {
-  @ManyToOne(fetch = LAZY)
-  private Member buyer;
-  @ManyToOne(fetch = LAZY)
-  private Product product;
+    @ManyToOne(fetch = LAZY)
+    private Member buyer;
+    @ManyToOne(fetch = LAZY)
+    private Product product;
 }

@@ -20,26 +20,26 @@ import static lombok.AccessLevel.PROTECTED;
 @SuperBuilder
 @NoArgsConstructor(access = PROTECTED)
 public class Product extends BaseEntity {
-  private String subject;
-  @ManyToOne(fetch = LAZY)
-  private Member author;
-  @ManyToOne(fetch = LAZY)
-  private Song song;
-  private int price;
+    private String subject;
+    @ManyToOne(fetch = LAZY)
+    private Member author;
+    @ManyToOne(fetch = LAZY)
+    private Song song;
+    private int price;
 
-  public Product(long id) {
-    super(id);
-  }
+    public Product(long id) {
+        super(id);
+    }
 
-  public int getSalePrice() {
-    return getPrice();
-  }
+    public int getSalePrice() {
+        return getPrice();
+    }
 
-  public int getWholesalePrice() {
-    return (int) Math.ceil(getPrice() * 0.7);
-  }
+    public int getWholesalePrice() {
+        return (int) Math.ceil(getPrice() * 0.7);
+    }
 
-  public boolean isOrderable() {
-    return true;
-  }
+    public boolean isOrderable() {
+        return true;
+    }
 }

@@ -21,8 +21,8 @@ import static javax.persistence.FetchType.LAZY;
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class CashLog extends BaseEntity {
-  @ManyToOne(fetch = LAZY)
-  private Member member;
-  private long price;
-  private String eventType;
+    @ManyToOne(fetch = LAZY)
+    private Member member;
+    private long price;
+    private String eventType;
 }

@@ -1,6 +1,5 @@
-package com.koreait.exam.acc_app_2024_04.cotroller;
+package com.koreait.exam.acc_app_2024_04.controller;
 
-import com.koreait.exam.acc_app_2024_04.app.member.controller.MemberController;
 import com.koreait.exam.acc_app_2024_04.app.member.service.MemberService;
 import com.koreait.exam.acc_app_2024_04.app.order.controller.OrderController;
 import org.junit.jupiter.api.DisplayName;
@@ -16,7 +15,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.containsString;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
@@ -39,15 +37,15 @@ public class OrderControllerTests {
     void t1() throws Exception {
         // WHEN
         ResultActions resultActions = mvc
-            .perform(get("/order/3"))
-            .andDo(print());
+                .perform(get("/order/3"))
+                .andDo(print());
 
         // THEN
         resultActions
-            .andExpect(status().is2xxSuccessful())
-            .andExpect(handler().handlerType(OrderController.class))
-            .andExpect(handler().methodName("showDetail"))
-            .andExpect(content().string(containsString("주문")));
+                .andExpect(status().is2xxSuccessful())
+                .andExpect(handler().handlerType(OrderController.class))
+                .andExpect(handler().methodName("showDetail"))
+                .andExpect(content().string(containsString("주문")));
     }
 
 

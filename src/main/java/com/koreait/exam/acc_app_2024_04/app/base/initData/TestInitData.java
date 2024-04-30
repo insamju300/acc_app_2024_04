@@ -15,11 +15,11 @@ import org.springframework.context.annotation.Profile;
 public class TestInitData implements InitDataBefore {
     @Bean
     CommandLineRunner initData(
-        MemberService memberService,
-        SongService songService,
-        ProductService productService,
-        CartService cartService,
-        OrderService orderService) {
+            MemberService memberService,
+            SongService songService,
+            ProductService productService,
+            CartService cartService,
+            OrderService orderService) {
         return args -> {
             before(memberService, songService, productService, cartService, orderService);
         };

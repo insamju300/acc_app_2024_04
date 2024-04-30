@@ -18,53 +18,53 @@ import java.util.Optional;
 @Transactional(readOnly = true)
 public class CartService {
 
-  private final CartItemRepository cartItemRepository;
+    private final CartItemRepository cartItemRepository;
 
-  public CartItem addItem(Member buyer, Product product) {
-    CartItem oldCartItem = cartItemRepository.findByBuyerIdAndProductId(buyer.getId(), product.getId()).orElse(null);
+    public CartItem addItem(Member buyer, Product product) {
+        CartItem oldCartItem = cartItemRepository.findByBuyerIdAndProductId(buyer.getId(), product.getId()).orElse(null);
 
-    if (oldCartItem != null) {
-      return oldCartItem;
+        if (oldCartItem != null) {
+            return oldCartItem;
+        }
+
+        CartItem cartItem = CartItem.builder()
+                .buyer(buyer)
+                .product(product)
+                .build();
+
+        cartItemRepository.save(cartItem);
+
+        return cartItem;
     }
 
-    CartItem cartItem = CartItem.builder()
-        .buyer(buyer)
-        .product(product)
-        .build();
+    public boolean removeItem(Member buyer, Product product) {
+        CartItem oldCartItem = cartItemRepository.findByBuyerIdAndProductId(buyer.getId(), product.getId()).orElse(null);
 
-    cartItemRepository.save(cartItem);
-
-    return cartItem;
-  }
-
-  public boolean removeItem(Member buyer, Product product) {
-    CartItem oldCartItem = cartItemRepository.findByBuyerIdAndProductId(buyer.getId(), product.getId()).orElse(null);
-
-    if (oldCartItem != null) {
-      cartItemRepository.delete(oldCartItem);
-      return true;
+        if (oldCartItem != null) {
+            cartItemRepository.delete(oldCartItem);
+            return true;
+        }
+        return false;
     }
-    return false;
-  }
 
-  public boolean hasItem(Member buyer, Product product) {
+    public boolean hasItem(Member buyer, Product product) {
 
-    return cartItemRepository.existsByBuyerIdAndProductId(buyer.getId(), product.getId());
-  }
+        return cartItemRepository.existsByBuyerIdAndProductId(buyer.getId(), product.getId());
+    }
 
-  public List<CartItem> getItemsByBuyer(Member buyer) {
-    return cartItemRepository.findAllByBuyerId(buyer.getId());
-  }
+    public List<CartItem> getItemsByBuyer(Member buyer) {
+        return cartItemRepository.findAllByBuyerId(buyer.getId());
+    }
 
-  public void removeItem(CartItem cartItem) {
-    cartItemRepository.delete(cartItem);
-  }
+    public void removeItem(CartItem cartItem) {
+        cartItemRepository.delete(cartItem);
+    }
 
-  public void removeItem(
-      Member buyer,
-      Long productId
-  ) {
-    Product product = new Product(productId);
-    removeItem(buyer, product);
-  }
+    public void removeItem(
+            Member buyer,
+            Long productId
+    ) {
+        Product product = new Product(productId);
+        removeItem(buyer, product);
+    }
 }
