@@ -74,7 +74,7 @@ public class OrderController {
         return "order/detail";
     }
 
-    private final String SECRET_KEY = "test_sk_6bJXmgo28eBnx5GDX4Nj3LAnGKWx:";
+    private final String SECRET_KEY = "test_ck_ORzdMaqN3w22ZnJyEkRy85AkYXQG";
 
     @PostConstruct
     private void init() {
