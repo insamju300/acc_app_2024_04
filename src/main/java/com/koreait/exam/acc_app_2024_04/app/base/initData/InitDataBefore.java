@@ -60,12 +60,7 @@ public interface InitDataBefore {
         memberService.addCash(member1, 1_000_000, "충전__무통장입금");
 
         memberService.addCash(member2, 2_000_000, "충전__무통장입금");
-        .
 
-
-
-
-        
         // 1번 주문 : 결제 완료
         Order order1 = helper.order(member1, Arrays.asList(product1, product2));
         int order1PayPrice = order1.calculatePayPrice();
@@ -78,6 +73,7 @@ public interface InitDataBefore {
 
         // 3번 주문 : 결제 전
         Order order3 = helper.order(member2, Arrays.asList(product1, product2));
+
 
     }
 }
