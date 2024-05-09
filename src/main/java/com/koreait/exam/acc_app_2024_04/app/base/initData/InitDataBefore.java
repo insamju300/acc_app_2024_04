@@ -74,6 +74,5 @@ public interface InitDataBefore {
         // 3번 주문 : 결제 전
         Order order3 = helper.order(member2, Arrays.asList(product1, product2));
 
-
     }
 }
